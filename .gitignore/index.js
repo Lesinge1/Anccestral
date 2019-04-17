@@ -1,15 +1,12 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require("discord.js");
 
-client.on('ready', () => {
-console.log(`Logged in as ${client.user.tag}!`);
-console.log("Streamstatus by DayZoonHD")
+var bot = new Discord.Client();
 
-client.user.setActivity(`𝓡𝓲𝓮𝓷.`, {
-type: "STREAMING",
-url: "https://www.twitch.tv/lesingee1"})
-    .then(presence => console.log(`Your Status has been set to  ${presence.game ? presence.game.none : 'none'}`))
-    .catch(console.error);
+bot.on("ready", () => {
+    bot.user.setGame('Rien', 'https://twitch.tv/lesingee1');
+    bot.user.setStatus('dnd')
+    console.log("Ready");
 });
 
 bot.login(process.env.TOKEN);
+
