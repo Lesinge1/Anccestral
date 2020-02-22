@@ -1,12 +1,22 @@
 const Discord = require("discord.js");
 
-var bot = new Discord.Client();
+var client = new Discord.Client();
 
-bot.on("ready", () => {
-    bot.user.setGame('Rien', 'https://twitch.tv/lesingee1');
-    bot.user.setStatus('dnd')
+client.on("ready", () => {
+    client.user.setActivity('Ta mère', {type: 3});
+    client.user.setStatus('dnd')
     console.log("Ready");
+
 });
 
-bot.login(process.env.TOKEN);
+client.on("message", message => {
+  if (message.content.startsWith('Cold')) message.channel.send('<@598579759643099137> le meilleur <:HeartPlus:659519648018202634>');
+  if (message.content.startsWith('cold')) message.channel.send('<@598579759643099137> le meilleur <:HeartPlus:659519648018202634>');
+ 
+ });
 
+
+
+
+
+client.login(process.env.TOKEN);
